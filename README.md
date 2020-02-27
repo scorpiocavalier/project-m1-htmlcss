@@ -1,6 +1,6 @@
 # Description
 
-Create an HTML file and a CSS file that reproduces the following  
+Create an HTML file and a CSS file that reproduces the following (there is also a screenshot at the bottom.)
 https://youtu.be/_t29BK3Tseg
 
 # Instructions and tips to succeed
@@ -123,3 +123,7 @@ We will be doing mobile first design using **min-width** rules for the media que
 
 If your CSS rules are getting too complicated (e.g. `.myclassname > .someotherclass > div > span`) you should create new classes.  
 **ID**s are useful for specific sections of the web page (e.g. _features_ section) as well as specific elements which you know there will be only one of (**ID**s need to be unique)
+
+## Screenshot
+
+<img src='./imgs/screenshot.png' />
