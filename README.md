@@ -1,9 +1,11 @@
-# Description
+# Module 1 - Project - Build a webpage
+
+## Description
 
 Create an HTML file and a CSS file that reproduces the following (there is also a screenshot at the bottom.)
 https://youtu.be/_t29BK3Tseg
 
-# Instructions and tips to succeed
+## Instructions and tips to succeed
 
 To successfully create this web page, here are a few guidelines to keep in mind:
 
@@ -12,7 +14,7 @@ To successfully create this web page, here are a few guidelines to keep in mind:
 Take a moment to look at the different parts of the web page. Do you see anything that you would be comfortable doing?
 
 - Can you create a black bar at the top of the page?
-- What about creating a fullscreen background? This was one of the CSS exercises
+- What about creating a fullscreen background?
 - There are 2 big sections with some text and a background color. Perhaps you do not know how to do gradient backgrounds, but you may know how to set a blue background color.
 - The images have a zoom effect and a dark background with text showing up when you hover, perhaps trying to reproduce that whole behavior seems daunting. Try displaying images and creating the layout, you can **worry about the fancy stuff later**.
 - There is a styled input box and checkbox around the bottom, perhaps you're not sure how to do that. If you get stuck trying to make it look the same, **focus on doing what you can** - a simple input and checkbox - and move on. You can come back to more troublesome parts later on.
@@ -32,6 +34,8 @@ Following the first point, it's fine to struggle on a feature which you want to 
 - It's normal to run into obstacles, it is part of the learning process. **If you are not struggling, you're probably not learning much.**
 - The instructor and the T.Cs are here to help
 
+---
+
 ## Evaluation criterias
 
 - Layout and general page presentation matches expectations (e.g. fixed navbar, fullscreen image with header, things are where they should be and visuals match expectations)
@@ -41,17 +45,16 @@ Following the first point, it's fine to struggle on a feature which you want to 
 
 You will have a PASS / FAIL on each grading rubric and a final PASS / FAIL grade for the module. The final grade is based on your project and the effort put into it. If some things are missing / don't look exactly right but I see you are going in the right direction and have made a real effort, you will be ok.
 
-### Deadline
+---
 
-You have until the start of the next module (next Tuesday) to submit this project (push it on a new repository called **html-css-project**).
+## Reference
 
-# Reference
-
-Use the Poppins font. Use rem as unit for font-size (scales with device size).
+Use the Poppins font from [Google Fonts](https://fonts.google.com/specimen/Poppins).
 
 I suggest using CSS variables for things like color (`#3a3633` is the primary color in this design, used for background color, text color) or **border-radius** (`4px`) so it's consistent across different elements.
 
 The website has a navbar with links that scroll smoothly to different sections of the page. To achieve this, you will need to specify an id on the different sections of the page (e.g. `<div id="features"></div>`) and you can then use an anchor tag to go to that section (`<a href="#features"></a>`).
+
 You can use this CSS to have smooth scrolling:
 
 ```css
@@ -60,9 +63,9 @@ html {
 }
 ```
 
-Here are some of the CSS properties used for the project (this is not a full list of the properties used, just the new or potentially confusing ones):
+### Useful Properties
 
----
+Here are some of the CSS properties used for the project (this is not a full list of the properties used, just the new or potentially confusing ones):
 
 `background-color`  
 You can use **rgba** to make transparent colors. **a** is the transparency value. e.g. `background-color: rgba(0,0,0,0.5);`
@@ -114,8 +117,14 @@ Desktops: `1200px`
 We will be doing mobile first design using **min-width** rules for the media queries.
 
 ```css
+/* Mobile styles */
+
 @media (min-width: 768px) {
-  /* CSS Rules */
+  /* Tablet styles */
+}
+
+@media (min-width: 1200px) {
+  /* Desktop styles */
 }
 ```
 
