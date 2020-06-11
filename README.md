@@ -145,9 +145,6 @@ Use the following meta tag (put it first in the `<head>` section) to have the ap
 
 For this project, you will have ONE breakpoint: `768px`. Anything less than that is considered mobile, anything more is desktop. _This might mean that the page looks weird between `768` and around `900`._ That's fine. We're not focusing on a tablet verion.
 
-Tablets: `600px`  
-Desktops: `1200px`
-
 Mobile-first design uses **min-width** rules for the media queries.
 
 Put all your media queries at the bottom so they override your mobile CSS rules.
