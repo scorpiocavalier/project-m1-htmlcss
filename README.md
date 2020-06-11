@@ -44,6 +44,8 @@ Even without a design, it's generally better for this type of web page to consid
 
 You should also work section by section. e.g. create the mobile version of the nav, adjust the code for the desktop version of the nav, move on to the next section.
 
+Use the above video to help guide you for the mobile version.
+
 ---
 
 ## Evaluation Criteria
