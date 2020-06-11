@@ -7,9 +7,11 @@ https://youtu.be/_t29BK3Tseg
 
 ## Instructions and tips to succeed
 
-To successfully create this web page, here are a few guidelines to keep in mind:
+First and foremost, **read** this document carefully!
 
-### 1. Start by **doing what you can**
+Here are a few guidelines to keep in mind:
+
+### 1. Start by doing what you can
 
 Take a moment to look at the different parts of the web page. Do you see anything that you would be comfortable doing?
 
@@ -31,19 +33,48 @@ Following the first point, it's fine to struggle on a feature which you want to 
 ### 4. I'm tired / feel lost / nothing is working
 
 - If you end up feeling that way, sometimes the best remedy is to just take a step out for a few minutes, walk for a bit, think about something else. Many times, I ended up finding a solution or just a new perspective allowing me to move forward by stepping out and coming back with fresh eyes.
-- It's normal to run into obstacles, it is part of the learning process. **If you are not struggling, you're probably not learning much.**
-- The instructor and the T.Cs are here to help
+- It's normal to run into obstacles, it is part of the learning process. **If you're not struggling, you're not learning.**
+- The instructor and the T.Cs are here to help **guide** you.
+
+### 5. Where is the mobile mockup?
+
+Part of the project is to ensure that the page looks decent on mobile as well as desktop. Unfortunately, you haven't been provided with a mockup, or screenshot of how the mobile version should/could look. Unfortunately, this happens quite often.
+
+Even without a design, it's generally better for this type of web page to consider mobile-first. The mobile version is generally easier to implement, and without a mockup, you have some freedom there. It will also mean less code overall.
+
+You should also work section by section. e.g. create the mobile version of the nav, adjust the code for the desktop version of the nav, move on to the next section.
 
 ---
 
-## Evaluation criterias
+## Evaluation Criteria
 
-- Layout and general page presentation matches expectations (e.g. fixed navbar, fullscreen image with header, things are where they should be and visuals match expectations)
-- Nothing is missing (all the sections are here, all the images, all the links, etc.)
-- Is mobile responsive (Does the layout change to adapt to different screen sizes? How does it look on mobile, tablet, desktop?)
-- Implements all the extra features (Animation on the 'cool' box, zoom effect on image, underline hover effect on navbar links)
+You will be evaluated on the page you submit. Specifically, we will be looking at how close to the mockup your page is. To be clear, we are **not** looking for a pixel-perfect version, but close enough to not make the designer cry...
 
-You will have a PASS / FAIL on each grading rubric and a final PASS / FAIL grade for the module. The final grade is based on your project and the effort put into it. If some things are missing / don't look exactly right but I see you are going in the right direction and have made a real effort, you will be ok.
+### Specifically
+
+1. Desktop Layout (above `900px` wide)
+   - fixed navbar
+   - fullscreen image with header
+   - Nothing is missing (all the sections are there, all the images, all the links, etc.)
+2. Content
+   - Assets/content are where they should be.
+   - use of proper HTML tags (think semantic)
+3. Mobile version (less that `768px` wide)
+   - The page looks _decent_ on mobile.
+   - All of the content is visible on mobile.
+4. Animations and effects
+   - At least 1 animation has been implemented. (Animation on the 'cool' box, zoom effect on image, underline hover effect on navbar links)
+
+| Goal                      | Weight |
+| ------------------------- | ------ |
+| 1. Desktop Layout         | 40%    |
+| 2. Content                | 20%    |
+| 3. Mobile version         | 30%    |
+| 4. Animations and effects | 10%    |
+
+While your grade is based on the above criteria, it is also on the effort you put in.
+
+The percentages above are only a guide as to where your efforts should be focused. The grade you receive for this project will not be a percentage but a `PASS`/`FAIL` attribution.
 
 ---
 
@@ -51,7 +82,7 @@ You will have a PASS / FAIL on each grading rubric and a final PASS / FAIL grade
 
 Use the Poppins font from [Google Fonts](https://fonts.google.com/specimen/Poppins).
 
-I suggest using CSS variables for things like color (`#3a3633` is the primary color in this design, used for background color, text color) or **border-radius** (`4px`) so it's consistent across different elements.
+You don't have any of the actual external `url`s for the different links on the page. You can give all links the same `href`. Have all point to `href="#"`. \_If you don't add an `href`, the link will not render like a link on the page. (this does not apply to the nav, as it links to the different sections on the page.)
 
 The website has a navbar with links that scroll smoothly to different sections of the page. To achieve this, you will need to specify an id on the different sections of the page (e.g. `<div id="features"></div>`) and you can then use an anchor tag to go to that section (`<a href="#features"></a>`).
 
@@ -62,6 +93,8 @@ html {
   scroll-behavior: smooth;
 }
 ```
+
+We suggest using CSS variables for things like color (`#3a3633` is the primary color in this design, used for background color, text color) or **border-radius** (`4px`) so it's consistent across different elements. (If you take a look at the taxi activity we did yesterday, you will see how CSS variables are implemented.)
 
 ### Useful Properties
 
@@ -100,26 +133,27 @@ If you want to apply transitions on multiple properties, the syntax is: `transit
 `keyframes`  
 Use to make animations. **from** is like `0%` and **to** is like `100%`. You can add as many keyframes as you want (e.g. `from{} 50%{} 80%{} 90%{} to{}`). You can also add keyframes in media queries, just use the same name to override the existing keyframe.
 
-`grid-auto-rows`  
-Use this to specify the height of new grid rows (vs. `grid-template-rows` where you specify an explicit amount of rows and their size)
-
 ---
 
 ## Media queries
 
-Use the following meta tag (put it first in the `<head>` section) to have the appropriate scale on all devices:  
-`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+Use the following meta tag (put it first in the `<head>` section) to have the appropriate scale on all devices:
 
-Put all your media queries at the bottom so they override your mobile CSS rules. You can use these values:  
-Tablets: `768px`  
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+Put all your media queries at the bottom so they override your mobile CSS rules. For this project, you will have ONE breakpoint: `768px`. Anything less than that is considered mobile, anything more is desktop. _This might mean that the page looks weird between `768` and around `900`._ That's fine. We're not focusing on a tablet verion.
+
+Tablets: `600px`  
 Desktops: `1200px`
 
-We will be doing mobile first design using **min-width** rules for the media queries.
+Mobile-first design uses **min-width** rules for the media queries.
 
 ```css
 /* Mobile styles */
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   /* Tablet styles */
 }
 
@@ -130,9 +164,10 @@ We will be doing mobile first design using **min-width** rules for the media que
 
 ## Notes
 
-If your CSS rules are getting too complicated (e.g. `.myclassname > .someotherclass > div > span`) you should create new classes.  
-**ID**s are useful for specific sections of the web page (e.g. _features_ section) as well as specific elements which you know there will be only one of (**ID**s need to be unique)
+If your CSS rules are getting too complicated (e.g. `.myclassname > .someotherclass > div > span`) you should create new classes.
 
-## Screenshot
+**ID**s are useful for section navigation but NOT for styling.
+
+## Screenshot(s)
 
 <img src='./imgs/screenshot.png' />
