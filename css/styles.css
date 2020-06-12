@@ -1,1 +1,496 @@
-/* CSS here :) */
+/* --- COMMON STYLES --- */
+
+:root {
+    --main-bg-color: rgb(43, 43, 43);
+    --lightgray: rgba(107, 107, 107, 0.2);
+    --transparent-gray: rgba(43, 43, 43, 0.5);
+    --nav-height: 8vh;
+    --box-shadow: 0 0 10px 1px #ddd;
+    --gap: calc(-20vh - 16px); /* -fancy-box height - 2*border */
+    --fast-animation: 2s;
+    --long-animation: 3s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 100%;
+}
+
+@keyframes rotate180 {
+    0% { left: 48px; transform: scale(1) rotate(0deg);}
+    80% { left: 300px; transform: scale(1) rotate(180deg); }
+    100% { left: 300px; transform: scale(0) rotate(180deg); }
+}
+
+@keyframes rotate360 {
+    100% { transform: rotate(360deg); }
+}
+
+/* --- NAV --- */
+
+nav {
+    background-color: var(--main-bg-color);
+    color: white;
+    height: var(--nav-height);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+}
+
+nav img, .burger-menu img {
+    height: calc(var(--nav-height) - 2vh); /* 2vh: margin top and bot */
+    margin: 1vh 2vh;
+}
+
+.burger-menu:hover > .dropdown-links {
+    display: flex;
+}
+
+.dropdown-links {
+    background-color: var(--main-bg-color);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.dropdown-links ul,
+.dropdown-links li,
+.dropdown-links a {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-links li {
+    height: var(--nav-height);
+    list-style-type: none;
+}
+
+.dropdown-links a {
+    padding: 19px 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-links a:hover {
+    background-color: var(--lightgray);
+}
+
+/* --- HERO --- */
+
+.hero-section {
+    height: 100vh;
+}
+
+.hero-image {
+    background-image: url("/imgs/bg.jpg");
+    background-color: black;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    position: relative;
+    top: var(--nav-height);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-divider {
+    display: none;
+}
+
+.hero-content {
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-header {
+    display: flex;
+    align-items: center;
+}
+
+.hero-header h1 {
+    padding: 0 0.5em;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
+.hero-text {
+    background-color: var(--transparent-gray);
+    padding: 1em;
+}
+
+/* --- FEATURES --- */
+
+.features-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features {
+    min-height: 40vh;
+    width: 80%;
+    margin: 1em 0;
+}
+
+.feature {
+    border: 2px solid var(--lightgray);
+    border-radius: 5px;
+    margin: 1em 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.feature img {
+    height: 40px;
+}
+
+.feature button {
+    width: 100%;
+    padding: 0.5em 1em;
+    background-color: var(--main-bg-color);
+    color: white;
+    border-style: none;
+}
+
+/* --- SOME COOL TEXT --- */
+
+.cool {
+    background-color: var(--main-bg-color);
+    color: white;
+    min-height: 40vh;
+    padding: 2em;
+}
+
+.cool h2 {
+    font-size: 2.2rem;
+}
+
+/* --- FANCY BOX --- */
+
+.fancy-box {
+    border: 8px solid white;
+    background-color: var(--main-bg-color);
+    text-align: center;
+    height: 20vh;
+    width: 40vw;
+    position: relative;
+    top: -10vh;
+    left: calc(30vw - 8px); /* 50vw - width/2 - border */
+    z-index: 1;
+}
+
+.fancy-box:hover {
+    animation: rotate360 var(--fast-animation) ease-in-out;
+}
+
+.fancy-box h3 {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.fancy-box p {
+    color: white;
+    padding: 0 2em;
+}
+
+/* --- SLICK GRADIENT --- */
+
+.gradient-section {
+    position: relative;
+    top: var(--gap);
+}
+
+.gradient {
+    background: black;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,149,255,1) 100%);
+    color: white;
+    padding: 2em;
+    padding-top: 10vh;
+    text-align: right;
+    min-height: 40vh;
+}
+
+.gradient h2 {
+    font-size: 2.2rem;
+}
+
+/* --- GALLERY --- */
+
+.gallery-section {
+    position: relative;
+    top: var(--gap);
+}
+
+.overflow-box {
+    overflow: hidden;
+}
+
+.gallery-box {
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-box h3 {
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.gallery-box:hover {
+    transform: scale(1.2);
+}
+
+.gallery-box:hover > h3 {
+    opacity: 1;
+}
+
+.tesla {
+    background-image: url('/imgs/tesla.jpg');
+}
+
+.procat {
+    background-image: url('/imgs/procat.jpg');
+}
+
+.hyperloop {
+    background-image: url('/imgs/hyperloop.jpg');
+}
+
+.sneakycat {
+    background-image: url('/imgs/sneakycat.jpg');
+}
+
+.falconrocket {
+    background-image: url('/imgs/falconrocket.jpeg');
+}
+
+.funnycat {
+    background-image: url('/imgs/funnycat.jpg');
+}
+
+/* --- NEWSLETTER --- */
+
+.newsletter-section {
+    position: relative;
+    top: var(--gap);
+    border-bottom: 2px solid var(--lightgray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: stretch;
+    min-height: 15vh;
+    width: 35%;
+    margin: 2em 0;
+}
+
+.email-input {
+    border: 2px solid var(--main-bg-color);
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+}
+
+.email-input input {
+    width: 100%;
+}
+
+.email-input img {
+    background-color: var(--main-bg-color);
+    padding: 2px 4px;
+}
+
+.checkbox-input {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-input input {
+    margin: 16px 16px 16px 0;
+}
+
+/* --- FOOTER --- */
+
+footer {
+    position: relative;
+    top: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer-column {
+    text-align: center;
+    width: 50%;
+    margin: 2em 0;
+}
+
+.footer-column a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 1em 0;
+}
+
+/* --- MEDIA QUERY --- */
+
+@media (min-width: 768px) {
+
+    /* --- NAV --- */
+    
+    .burger-menu img {
+        display: none;
+    }
+    
+    .dropdown-links {
+        visibility: visible;
+        position: relative;
+        top: 0;
+    }
+    
+    .dropdown-links,
+    .dropdown-links ul,
+    .dropdown-links li,
+    .dropdown-links a {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* --- HERO --- */
+
+    .hero-divider {
+        display: block;
+    }
+
+    .hero-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        border: 3px solid white;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hero-header {
+        width: 40%;
+    }
+
+    .hero-text {
+        width: 60%;
+    }
+
+    .hero-text article {
+        display: flex;
+        text-justify: auto;
+    }
+    
+    .hero-text p {
+        padding-right: 0.4em;
+    }
+
+    /* --- FEATURES --- */
+
+    .features {
+        display: flex;
+    }
+
+    .feature {
+        margin: 3em 1em;
+        width: 30%;
+    }
+
+    /* --- COOL TEXT --- */
+
+    .cool {
+        padding: 3em;
+    }
+    
+    .cool h2 {
+        font-size: 3rem;
+    }
+
+    .cool p {
+        font-size: 1.2rem;
+    }
+
+    /* --- FANCY BOX --- */
+    
+    .fancy-box {
+        left: 48px;
+        width: 25vw;
+    }
+    
+    .fancy-box:hover {
+        animation: rotate180 var(--long-animation) ease-in-out;
+    }
+
+    /* --- GRADIENT --- */
+    /* NO CHANGES */
+
+    /* --- GALLERY --- */
+
+    .gallery-section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .overflow-box {
+        width: calc(100%/3);
+    }
+
+    .gallery-box {
+        height: 35vh;
+    }
+
+    /* --- NEWSLETTER --- */
+    /* NO CHANGES */
+
+    /* --- FOOTER --- */
+
+    .footer-column {
+        width: 25%;
+    }
+}
