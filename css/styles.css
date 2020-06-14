@@ -4,6 +4,9 @@
     --main-bg-color: rgb(43, 43, 43);
     --lightgray: rgba(107, 107, 107, 0.2);
     --transparent-gray: rgba(43, 43, 43, 0.5);
+    --green-button-hover-color: rgb(0, 131, 39);
+    --blue-button-hover-color: rgb(0, 79, 131);
+    --red-button-hover-color: rgb(131, 0, 0);
     --nav-height: 8vh;
     --box-shadow: 0 0 10px 1px #ddd;
     --gap: calc(-20vh - 16px); /* -fancy-box height - 2*border */
@@ -78,12 +81,11 @@ nav img, .burger-menu img {
 }
 
 .dropdown-links li {
-    height: var(--nav-height);
     list-style-type: none;
 }
 
 .dropdown-links a {
-    padding: 19px 30px;
+    height: var(--nav-height);
     text-decoration: none;
     color: white;
 }
@@ -173,10 +175,23 @@ nav img, .burger-menu img {
 
 .feature button {
     width: 100%;
-    padding: 0.5em 1em;
+    padding: 0.8em 1em;
     background-color: var(--main-bg-color);
     color: white;
     border-style: none;
+    font-size: 1rem;
+}
+
+.feature:nth-child(1) > button:hover {
+    background-color: var(--green-button-hover-color);
+}
+
+.feature:nth-child(2) > button:hover {
+    background-color: var(--blue-button-hover-color);
+}
+
+.feature:nth-child(3) > button:hover {
+    background-color: var(--red-button-hover-color);
 }
 
 /* --- SOME COOL TEXT --- */
@@ -396,6 +411,18 @@ footer {
         display: flex;
         flex-direction: row;
     }
+    
+    .dropdown-links li {
+        min-width: 150px;
+    }
+
+    .dropdown-links a {
+        height: calc(var(--nav-height) - 3px); /* 3px border on hover */
+    }
+
+    .dropdown-links li:hover {
+        border-bottom: 3px solid white;
+    }
 
     /* --- HERO --- */
 
@@ -468,7 +495,14 @@ footer {
     }
 
     /* --- GRADIENT --- */
-    /* NO CHANGES */
+    
+    .gradient h2 {
+        font-size: 3rem;
+    }
+
+    .gradient p {
+        font-size: 1.2rem;
+    }
 
     /* --- GALLERY --- */
 
@@ -483,6 +517,10 @@ footer {
 
     .gallery-box {
         height: 35vh;
+    }
+
+    .gallery-box h3 {
+        font-size: 2rem;
     }
 
     /* --- NEWSLETTER --- */
