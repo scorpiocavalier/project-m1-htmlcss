@@ -17,6 +17,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
+    font-family: 'Poppins', sans-serif;
 }
 
 body, ul, li {
@@ -538,7 +539,7 @@ footer {
     }
 
     .overflow-box h3 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     /* --- NEWSLETTER --- */
