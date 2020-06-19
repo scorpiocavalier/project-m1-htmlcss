@@ -166,6 +166,7 @@ nav img, .burger-menu img {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: space-between;
     box-shadow: var(--box-shadow);
 }
 
@@ -265,6 +266,7 @@ nav img, .burger-menu img {
 
 .overflow-box {
     overflow: hidden;
+    position: relative;
 }
 
 .gallery-box {
@@ -280,18 +282,30 @@ nav img, .burger-menu img {
     transition: transform 0.3s ease-in-out;
 }
 
-.gallery-box h3 {
+.overflow-box h3 {
     font-size: 3rem;
     opacity: 0;
-    transition: opacity 0.3s linear;
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    top: 45%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overflow-box:hover h3 {
+    opacity: 1;
 }
 
 .gallery-box:hover {
     transform: scale(1.2);
-}
-
-.gallery-box:hover > h3 {
-    opacity: 1;
 }
 
 .tesla {
@@ -469,6 +483,10 @@ footer {
         width: 30%;
     }
 
+    .feature img {
+        height: 60px;
+    }
+
     /* --- COOL TEXT --- */
 
     .cool {
@@ -519,8 +537,8 @@ footer {
         height: 35vh;
     }
 
-    .gallery-box h3 {
-        font-size: 2rem;
+    .overflow-box h3 {
+        font-size: 4rem;
     }
 
     /* --- NEWSLETTER --- */
